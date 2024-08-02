@@ -12,6 +12,12 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  rewrites: async () => [
+    {
+      source: "/status",
+      destination: "/api/status",
+    },
+  ],
 };
 
 module.exports = nextConfig;
