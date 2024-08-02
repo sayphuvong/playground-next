@@ -35,6 +35,10 @@ importers:
       typescript:
         specifier: 5.0.2
         version: 5.0.2
+    devDependencies:
+      '@types/json5':
+        specifier: ^2.2.0
+        version: 2.2.0
 
 packages:
 
@@ -173,6 +177,10 @@ packages:
 
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+
+  '@types/json5@2.2.0':
+    resolution: {integrity: sha512-NrVug5woqbvNZ0WX+Gv4R+L4TGddtmFek2u8RtccAgFZWtS9QXF2xCXY22/M4nzkaKF0q9Fc6M/5rxLDhfwc/A==}
+    deprecated: This is a stub types definition. json5 provides its own type definitions, so you do not need this installed.
 
   '@types/node@18.15.5':
     resolution: {integrity: sha512-Ark2WDjjZO7GmvsyFFf81MXuGTA/d6oP38anyxWOL6EREyBKAxKoFHwBhaZxCfLRLpO8JgVXwqOwSwa7jRcjew==}
@@ -1359,6 +1367,10 @@ snapshots:
       tslib: 2.6.3
 
   '@types/json5@0.0.29': {}
+
+  '@types/json5@2.2.0':
+    dependencies:
+      json5: 1.0.2
 
   '@types/node@18.15.5': {}
 
