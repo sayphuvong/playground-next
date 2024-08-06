@@ -1,3 +1,5 @@
+import rootStyles from "@/styles/root.module.css";
+
 type Post = {
   id: number;
   userId: number;
@@ -8,11 +10,15 @@ type Post = {
 // posts will be populated at build time by getStaticProps()
 export default function Blog({ posts }: { posts: Array<Post> }) {
   return (
-    <ul>
-      {posts.map((post) => (
-        <li key={post.id}>{post.title}</li>
-      ))}
-    </ul>
+    <>
+      <main className={rootStyles.main}>
+        <ul>
+          {posts.map((post) => (
+            <li key={post.id}>{post.title}</li>
+          ))}
+        </ul>
+      </main>
+    </>
   );
 }
 
