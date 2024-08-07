@@ -24,9 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={rootStyles.main}>
-        <nav>
-          <Link href="/blog">Blog</Link>
-        </nav>
+        <h1 className="mb-[60px] text-5xl font-medium">Welcome Safuru.top</h1>
       </main>
     </>
   );

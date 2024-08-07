@@ -1,3 +1,4 @@
+import { ArticleCard } from "@/components/ArticleCard";
 import rootStyles from "@/styles/root.module.css";
 
 type Post = {
@@ -12,9 +13,22 @@ export default function Blog({ posts }: { posts: Array<Post> }) {
   return (
     <>
       <main className={rootStyles.main}>
-        <ul>
-          {posts.map((post) => (
-            <li key={post.id}>{post.title}</li>
+        <h1 className="mb-[60px] text-5xl font-medium">Blog</h1>
+        <ul className="grid grid-cols-3 gap-6">
+          {posts.slice(0, 9).map((post) => (
+            <li key={post.id} className="h-full">
+              <ArticleCard
+                thumbnail=""
+                title={post.title}
+                description={post.body}
+                link=""
+                tag=""
+                user={{
+                  avatar: "",
+                  name: "",
+                }}
+              />
+            </li>
           ))}
         </ul>
       </main>
