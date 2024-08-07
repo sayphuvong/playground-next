@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import rootStyles from "@/styles/root.module.css";
-import Link from "next/link";
+import { Button } from "@mantine/core";
+import { pushGtagEvent } from "@/services/ga4";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,19 @@ export default function Home() {
       </Head>
       <main className={rootStyles.main}>
         <h1 className="mb-[60px] text-5xl font-medium">Welcome Safuru.top</h1>
+        <section>
+          <Button
+            onClick={() => {
+              pushGtagEvent("test_ga4", {
+                app_name: "My app",
+                screen_name: "_app",
+                customName: "Hello world",
+              });
+            }}
+          >
+            Push GA4 Event
+          </Button>
+        </section>
       </main>
     </>
   );

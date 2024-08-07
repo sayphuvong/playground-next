@@ -6,10 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "copy:standalone": "cp -r .next/standalone .",
-    "copy:static": "cp -r .next/static standalone/.next",
-    "copy:public": "cp -r public standalone",
-    "prepare": "pnpm copy:standalone && pnpm copy:static && pnpm copy:public",
     "lint": "next lint"
   },
   "dependencies": {

@@ -6,17 +6,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Prefetch SEO tracking */}
-        <link
-          rel="dns-prefetch"
-          crossOrigin="anonymous"
-          href="https://www.googletagmanager.com/"
-        />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-
         {/* Google tag (gtag.js) */}
         {Boolean(appConfig.GTM_KEY) && (
           <script
@@ -26,7 +15,6 @@ export default function Document() {
         )}
         {Boolean(appConfig.GTM_KEY) && (
           <script
-            async
             dangerouslySetInnerHTML={{
               __html: `
               window.dataLayer = window.dataLayer || [];
@@ -37,6 +25,10 @@ export default function Document() {
             }}
           />
         )}
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
       </body>
     </Html>
   );
