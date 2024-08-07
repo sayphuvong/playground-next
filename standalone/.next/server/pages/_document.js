@@ -20,7 +20,8 @@ __webpack_require__.d(__webpack_exports__, {
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./src/configs/appConfig.ts
 const appConfig = {
-    GTM_KEY: "GTM-5H65MS9V"
+    // GTM_KEY: "GTM-5H65MS9V", // for GTM (Google Tag Manager)
+    GTM_KEY: "G-3BCFMRENDJ"
 };
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/next@13.2.4_react-dom@18.2.0_react@18.2.0__react@18.2.0/node_modules/next/document.js
@@ -33,23 +34,13 @@ function Document() {
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(next_document.Html, {
         lang: "en",
         children: [
-            /*#__PURE__*/ jsx_runtime_.jsx(next_document.Head, {
-                children: /*#__PURE__*/ jsx_runtime_.jsx("link", {
-                    rel: "dns-prefetch",
-                    crossOrigin: "anonymous",
-                    href: "https://www.googletagmanager.com/"
-                })
-            }),
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("body", {
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(next_document.Head, {
                 children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx(next_document.Main, {}),
-                    /*#__PURE__*/ jsx_runtime_.jsx(next_document.NextScript, {}),
                     Boolean(appConfig.GTM_KEY) && /*#__PURE__*/ jsx_runtime_.jsx("script", {
                         async: true,
                         src: `https://www.googletagmanager.com/gtag/js?id=${appConfig.GTM_KEY}`
                     }),
                     Boolean(appConfig.GTM_KEY) && /*#__PURE__*/ jsx_runtime_.jsx("script", {
-                        async: true,
                         dangerouslySetInnerHTML: {
                             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -59,6 +50,12 @@ function Document() {
             `
                         }
                     })
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("body", {
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx(next_document.Main, {}),
+                    /*#__PURE__*/ jsx_runtime_.jsx(next_document.NextScript, {})
                 ]
             })
         ]

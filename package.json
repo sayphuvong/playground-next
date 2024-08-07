@@ -6,6 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "build:prod": "pnpm clean && pnpm i && pnpm build",
+    "start:prod": "node standalone/server.js",
+    "clean": "rimraf standalone && rimraf .next && rimraf node_modules",
     "lint": "next lint"
   },
   "dependencies": {
@@ -26,6 +29,7 @@
     "@types/json5": "^2.2.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.7"
   }
 }
